@@ -9,47 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1695385489331038}
+  m_RootGameObject: {fileID: 1106201547363356}
   m_IsPrefabParent: 1
---- !u!1 &1695385489331038
+--- !u!1 &1106201547363356
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4157299024343594}
-  - component: {fileID: 33748459944819300}
-  - component: {fileID: 23384776766103742}
-  - component: {fileID: 54254943944838476}
-  - component: {fileID: 95911010605051940}
-  - component: {fileID: 114126652122431924}
+  - component: {fileID: 4718827959475032}
+  - component: {fileID: 33162931913678404}
+  - component: {fileID: 23970399634535288}
+  - component: {fileID: 54410904117005970}
+  - component: {fileID: 65622809507334450}
+  - component: {fileID: 95181630448074598}
   m_Layer: 0
-  m_Name: EV_Platform-CamTarget
+  m_Name: plaform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4157299024343594
+--- !u!4 &4718827959475032
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695385489331038}
-  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -4.598271, y: 4.213562, z: -24.6002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 1106201547363356}
+  m_LocalRotation: {x: 0.70710695, y: 0, z: 0, w: -0.70710665}
+  m_LocalPosition: {x: 6.69, y: 4.213562, z: -4.78}
+  m_LocalScale: {x: 0.7282602, y: 0.7282602, z: 0.7282602}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
---- !u!23 &23384776766103742
+  m_LocalEulerAnglesHint: {x: -89.99999, y: 180, z: 180}
+--- !u!23 &23970399634535288
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695385489331038}
+  m_GameObject: {fileID: 1106201547363356}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -79,36 +79,48 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33748459944819300
+--- !u!33 &33162931913678404
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695385489331038}
+  m_GameObject: {fileID: 1106201547363356}
   m_Mesh: {fileID: 4300000, guid: 0ac951d11b2c14744bc1fd599000fa75, type: 3}
---- !u!54 &54254943944838476
+--- !u!54 &54410904117005970
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695385489331038}
+  m_GameObject: {fileID: 1106201547363356}
   serializedVersion: 2
   m_Mass: 20
-  m_Drag: 1.47
+  m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
   m_CollisionDetection: 1
---- !u!95 &95911010605051940
+--- !u!65 &65622809507334450
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1106201547363356}
+  m_Material: {fileID: 13400000, guid: 77b2008fc6197f44a82570617d274355, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.6355844, y: 12.663789, z: 3.2071044}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95181630448074598
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695385489331038}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1106201547363356}
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: bcca7234d787e544d902e6e691ce2597, type: 2}
   m_CullingMode: 0
@@ -119,17 +131,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114126652122431924
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695385489331038}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc0aa091071e68b4ab8095fc51de61be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 2
-  start: 0
-  end: 0
