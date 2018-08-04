@@ -5,18 +5,28 @@ using UnityEngine;
 public class PlatformBehaviour : MonoBehaviour {
 
     public float Speed = 1.0f, start, end;//frames/second
-	// Use this for initialization
-	void Start () {
+    private Rigidbody rb;
+    public bool run = false;
+
+    // Use this for initialization
+    void Start () {
         start = 0;
         end = 180;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        Oscillate();
+        rb = GetComponent<Rigidbody>();
     }
 
-    private void Oscillate() {
+    // Update is called once per frame
+    void Update () {
+        if (run)
+        {
+            Oscillate();
+        }
+    }
+
+    public void RunAnimation() {
+        run = !run;
+    }
+    void Oscillate() {
         if (start <= end)
         {
             start += Time.deltaTime;
@@ -25,6 +35,26 @@ public class PlatformBehaviour : MonoBehaviour {
         else {
             start = 0;
             Speed *= -1;
+        }
+    }
+    void OnTriggerStay(Collider other)
+    {
+
+        if (other.tag == "player")
+        {
+            other.transform.parent = transform;
+            //transform.parent = other.transform;
+
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "player")
+        {
+            other.transform.parent = null;
+            //transform.parent = null;
+
         }
     }
 }

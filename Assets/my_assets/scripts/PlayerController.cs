@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
     private Vector3 moveDirection = Vector3.zero;
-
+    
     // Use this for initialization
     void Start()
     {
@@ -66,4 +66,6 @@ public class PlayerController : MonoBehaviour
             transform.position = lastCheckpoint;
         }
     }
+
+   
 }

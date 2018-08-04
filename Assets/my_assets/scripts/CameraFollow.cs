@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    Camera pCamera;
+    public Transform player = null;
+    public Transform target = null;
 	// Use this for initialization
-	void Start ()
-    {
-		pCamera= GetComponent<Camera>();
+
+    void LateUpdate() {
+        this.transform.LookAt(player.position);
+        this.transform.position = target.position;
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        pCamera.transform.LookAt(GameObject.Find("playerFocus").GetComponent<BoxCollider>().transform);
-	}
 }

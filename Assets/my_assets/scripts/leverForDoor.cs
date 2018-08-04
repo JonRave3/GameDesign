@@ -6,6 +6,7 @@ public class leverForDoor : MonoBehaviour
 {
     public GameObject lever;
     public GameObject gate;
+    public List<GameObject> platforms;
     Vector3 up;
     public float raise;
     bool open;
@@ -25,6 +26,7 @@ public class leverForDoor : MonoBehaviour
         if (open)
         {
             gate.transform.position = Vector3.MoveTowards(gate.transform.position, up, move);
+            
         }
 	}
     private void OnTriggerEnter(Collider other)
@@ -35,6 +37,10 @@ public class leverForDoor : MonoBehaviour
             lever.transform.Rotate(-86, 0, 0, Space.Self);
             //gate.transform.position = Vector3.MoveTowards(gate.transform.position, up, move);
             open = true;
+            foreach (var p in platforms)
+            {
+                p.GetComponent<PlatformBehaviour>().RunAnimation();
+            }
         }
     }
 }
