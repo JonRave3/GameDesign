@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Vector3 lastCheckpoint;
     public Animator playerAnim;
     public CharacterController playerController;
     public float speed = 6.0F;
@@ -12,14 +13,15 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
+        lastCheckpoint = transform.position;
         playerController = GetComponent<CharacterController>();
         playerAnim = GetComponentInChildren<Animator>();
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         float mouseInput = Input.GetAxis("Mouse X");
         Vector3 lookhere = new Vector3(0, mouseInput, 0);
@@ -31,7 +33,7 @@ public class PlayerController : MonoBehaviour
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
-            if (moveDirection!=Vector3.zero)
+            if (moveDirection != Vector3.zero)
             {
                 playerAnim.SetBool("isRunning", true);
             }
@@ -55,5 +57,13 @@ public class PlayerController : MonoBehaviour
         }
         moveDirection.y -= gravity * Time.deltaTime;
         playerController.Move(moveDirection * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "lava")
+        {
+            transform.position = lastCheckpoint;
+        }
     }
 }
