@@ -92,8 +92,8 @@ GameObject:
   - component: {fileID: 65893047524573178}
   - component: {fileID: 95920555183191722}
   - component: {fileID: 108198615725863068}
-  - component: {fileID: 114250581740747944}
   - component: {fileID: 65257848768376338}
+  - component: {fileID: 114043782717623020}
   m_Layer: 0
   m_Name: Lava 1
   m_TagString: lava
@@ -120,9 +120,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995116324101286}
-  m_LocalRotation: {x: 0.00026687954, y: -0.00011602264, z: 0.00036361383, w: 0.9999999}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 41.49741, y: 30.371454, z: 42.945423}
+  m_LocalRotation: {x: 0.00026687956, y: -0.000116022646, z: 0.00036361386, w: 0.99999994}
+  m_LocalPosition: {x: -5.9, y: -5.8407593, z: -9.9}
+  m_LocalScale: {x: 41.49741, y: 30.37145, z: 42.945423}
   m_Children:
   - {fileID: 4534402187101236}
   - {fileID: 4750211622532148}
@@ -290,7 +290,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114250581740747944
+--- !u!114 &114043782717623020
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -298,12 +298,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1995116324101286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc0aa091071e68b4ab8095fc51de61be, type: 3}
+  m_Script: {fileID: 11500000, guid: b7d6141e262d8d349b5abd1af6b50139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0.02
-  start: 0
-  end: 10800
+  riseSpeed: 5
+  endY: 90
 --- !u!198 &198288393016811328
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -5,14 +5,13 @@ using UnityEngine;
 public class PlatformBehaviour : MonoBehaviour {
 
     public float Speed = 1.0f, start, end;//frames/second
-    private Rigidbody rb;
-    public bool run = false;
+    public bool run;
 
     // Use this for initialization
     void Start () {
         start = 0;
-        end = 180;
-        rb = GetComponent<Rigidbody>();
+        end = 4;
+        run = false;
     }
 
     // Update is called once per frame
@@ -37,16 +36,6 @@ public class PlatformBehaviour : MonoBehaviour {
             Speed *= -1;
         }
     }
-    void OnTriggerStay(Collider other)
-    {
-
-        if (other.tag == "player")
-        {
-            other.transform.parent = transform;
-            //transform.parent = other.transform;
-
-        }
-    }
 
     void OnTriggerExit(Collider other)
     {
@@ -54,7 +43,6 @@ public class PlatformBehaviour : MonoBehaviour {
         {
             other.transform.parent = null;
             //transform.parent = null;
-
         }
     }
 }

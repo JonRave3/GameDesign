@@ -7,6 +7,7 @@ public class leverForDoor : MonoBehaviour
     public GameObject lever;
     public GameObject gate;
     public List<GameObject> platforms;
+    private float toggleAngle = -86.0f;
     Vector3 up;
     public float raise;
     bool open;
@@ -34,10 +35,11 @@ public class leverForDoor : MonoBehaviour
         
         if(other.tag=="player")//&&!open)
         {
-            lever.transform.Rotate(-86, 0, 0, Space.Self);
+            lever.transform.Rotate(toggleAngle, 0, 0, Space.Self);
+            toggleAngle *= -1;
             //gate.transform.position = Vector3.MoveTowards(gate.transform.position, up, move);
             open = true;
-            foreach (var p in platforms)
+            foreach (GameObject p in platforms)
             {
                 p.GetComponent<PlatformBehaviour>().RunAnimation();
             }

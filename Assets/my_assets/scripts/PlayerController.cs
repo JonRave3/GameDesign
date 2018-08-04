@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
         Vector3 lookhere = new Vector3(0, mouseInput, 0);
         transform.Rotate(lookhere);
 
+        mouseInput = Input.GetAxis("Mouse Y");
+        lookhere = new Vector3(-mouseInput, 0, 0);
+        transform.Rotate(lookhere);
+
         if (playerController.isGrounded)
         {
             playerAnim.SetBool("isJumping", false);
@@ -64,6 +68,10 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "lava")
         {
             transform.position = lastCheckpoint;
+        }
+        else if (other.tag == "platform") {
+
+            this.transform.parent = other.transform;
         }
     }
 
